@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaidenovART - Illustrating the Everyday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>NaidenovART</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="#projects" class="nav-link dropdown-toggle">Projects</a>
+                    <div class="dropdown-menu">
+                        <a href="#projects" class="dropdown-item">Alfa Romeo 156</a>
+                        <a href="#aseam-detailing" class="dropdown-item">ASEA-M Detailing Studio</a>
+                        <a href="#pizza-stop" class="dropdown-item">PizzaStop</a>
+                    </div>
+                </div>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#street-posters" class="nav-link">Street Posters</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">NaidenovART</h1>
+            <p class="hero-subtitle">Рисуване по всичко</p>
+            <button class="cta-button hover-effect" onclick="scrollToSection('portfolio')">
+                View Portfolio
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <h2 class="section-title">About NaidenovART</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="story-container">
+                        <div class="story-scroll-wrapper">
+                            <button class="story-arrow story-arrow-up" disabled>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="18,15 12,9 6,15"></polyline>
+                                </svg>
+                            </button>
+                            <div class="story-text-container">
+                                <div class="story-text">
+                                    <p>Ако майка ми ме запали по рисуването, то баща ми беше най-големия ми фен в тази сфера и като цяло.</p>
+                                    <p>Винаги когато рисувах нещо на лист и му го показвах, не спираше да гледа изобразеното с усмивка на лицето си, казвайки ми, че имам златни ръце и един ден ще бъда голям човек.</p>
+                                    <p>Снимаше всяка моя рисунка и я показваше на приятелите си, защото се гордеел.</p>
+                                    <p>След като на финалната права здравето не ми позволи да му сбъдна мечтата да бъда професионален боец, реших че това да се изразявам върху лист хартия/стена/ламарина, ще е подобаващ начин да почитам мъжката ръка в живота ми.</p>
+                                    <p>Имах голям мерак да си вземем гараж, за да се опитам да нарисувам тогавашната ни кола върху него (Голф 3).</p>
+                                    <p>След като му споделих идеята, той ми каза: "Направо ще ти вземем спрейове да нарисуваш нещо върху колата".</p>
+                                    <p>8 години по-късно се сетих за думите му и сътворих това с моята, благодарение на което името "NAIDENOVART" се лансира все повече с всеки изминал ден.</p>
+                                </div>
+                                <div class="story-fade-top"></div>
+                                <div class="story-fade-bottom"></div>
+                            </div>
+                            <button class="story-arrow story-arrow-down">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">2</span>
+                            <span class="highlight-text">National Awards</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">9</span>
+                            <span class="highlight-text">Street Posters Initiatives</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">100+</span>
+                            <span class="highlight-text">Drawings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="AboutTheArtist/1_11zon.jpg" alt="NaidenovART Artist Photo" class="artist-photo hover-effect">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alfa Romeo 156 Project -->
+    <section id="projects" class="project-alfa fade-in">
+        <div class="container">
+            <h2 class="section-title">Alfa Romeo 156</h2>
+            <div class="alfa-content-wrapper">
+                <div class="alfa-left-section">
+                    <div class="alfa-text-content">
+                        <div class="alfa-description">
+                            <p>Една импровизация, целяща да направи старата ми трошка атрактивна.</p>
+                            <p>Огромно благодаря на @gp__baby ,който присърце направи колата ми от ритнат чайник в лъскава баба!</p>
+                            <p>Благодаря на моите приятели и любовта ми, които бяха плътно до мен и подкрепиха тази идея, докато всеки в околността ме съветваше "да не я правя циганска".</p>
+                            <p>Една малка увереност, която ми трябваше за смелостта да направя това нещо е факт, благодарение на всички тях!</p>
+                            <p class="alfa-signature"><strong>NAIDENOVART - Различното ✌️</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alfa-carousel-content">
+                    <div class="alfa-scroll-wrapper">
+                        <button class="scroll-arrow scroll-arrow-left alfa-arrow-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="alfa-scroll-container">
+                            <div class="alfa-fade-left"></div>
+                            <div class="alfa-fade-right"></div>
+                            <div class="alfa-grid">
+                                <!-- Project Alfa Images -->
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/1_10_11zon.jpeg" alt="Project Alfa Image 1" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/2_9_11zon.jpeg" alt="Project Alfa Image 2" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/9_2_11zon.jpeg" alt="Project Alfa Image 3" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/10_1_11zon.jpeg" alt="Project Alfa Image 4" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/5_6_11zon.jpeg" alt="Project Alfa Image 5" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/6_5_11zon.jpeg" alt="Project Alfa Image 6" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/7_4_11zon.jpeg" alt="Project Alfa Image 7" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/8_3_11zon.jpeg" alt="Project Alfa Image 8" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/3_8_11zon.jpeg" alt="Project Alfa Image 9" class="alfa-image">
+                                </div>
+                                <div class="alfa-item hover-effect">
+                                    <img src="ProjectAlfa/4_7_11zon.jpeg" alt="Project Alfa Image 10" class="alfa-image">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="scroll-arrow scroll-arrow-right alfa-arrow-right">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AseamDetailing Project -->
+    <section id="aseam-detailing" class="project-aseam fade-in">
+        <div class="container">
+            <h2 class="section-title">ASEA-M Detailing Studio</h2>
+            <div class="aseam-content-wrapper">
+                <div class="aseam-left-section">
+                    <div class="aseam-text-content">
+                        <div class="aseam-description">
+                            <p>Щастлив и благодарен съм за доверието да променя облика на едно от бъдещите най-добри детайлинг студия в България! 🔥💪</p>
+                            <p class="aseam-signature"><strong>NAIDENOVART - Различното 🐝</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aseam-carousel-content">
+                    <div class="aseam-scroll-wrapper">
+                        <button class="scroll-arrow scroll-arrow-left aseam-arrow-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="aseam-scroll-container">
+                            <div class="aseam-fade-left"></div>
+                            <div class="aseam-fade-right"></div>
+                            <div class="aseam-grid">
+                                <!-- ASEA-M Detailing Studio Placeholder Images -->
+                                <div class="aseam-item hover-effect">
+                                    <div class="aseam-placeholder">
+                                        <span>ASEA-M Studio #1</span>
+                                        <small>Coming Soon</small>
+                                    </div>
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <div class="aseam-placeholder">
+                                        <span>ASEA-M Studio #2</span>
+                                        <small>Coming Soon</small>
+                                    </div>
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <div class="aseam-placeholder">
+                                        <span>ASEA-M Studio #3</span>
+                                        <small>Coming Soon</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="scroll-arrow scroll-arrow-right aseam-arrow-right">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PizzaStop Project -->
+    <section id="pizza-stop" class="project-pizza fade-in">
+        <div class="container">
+            <h2 class="section-title">PizzaStop</h2>
+            <div class="pizza-content-wrapper">
+                <div class="pizza-left-section">
+                    <div class="pizza-text-content">
+                        <div class="pizza-story-container">
+                            <div class="pizza-scroll-text-wrapper">
+                                <button class="pizza-story-arrow pizza-story-arrow-up" disabled>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="18,15 12,9 6,15"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="pizza-text-container">
+                                    <div class="pizza-description">
+                                        <p>Скъпи приятели, официално открих летният сезон! С много тен, пот и най-вече - новата визия на най-хубавата и просперираща пицария в Ловеч - PIZZA STOP. Новата й визия от задната страна, изцяло по моя идея (скицата и процеса са сред снимките). Предстои изрисуването й отпред и встрани, като това ще бъде факт другата събота. До那个时候 - новите обекти започват!</p>
+                                        <p>Процедурата- подготовка на стената, скицирам идеята си и ако бъде одобрена - става факт.</p>
+                                        <p>Едно огромно благодаря на собственика и виновник за най-вкусните пици, дюнери и бургери за съдействието - Илияс Делсизов (с персонала си подготвиха стената) и доверието, което ми гласува!!</p>
+                                        <p>Една мечта от 2-ри клас се сбъдна. Детето в мен кипи. И ще го карам да кипи все повече! ❤️</p>
+                                        <p class="pizza-signature"><strong>NAIDENOVART - Различното 🍕🥙🍔</strong></p>
+                                    </div>
+                                    <div class="pizza-fade-top"></div>
+                                    <div class="pizza-fade-bottom"></div>
+                                </div>
+                                                            </div>
+                            </div>
+                            <button class="pizza-story-arrow pizza-story-arrow-down">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                    </div>
+                </div>
+                <div class="pizza-carousel-content">
+                    <div class="pizza-scroll-wrapper">
+                        <button class="scroll-arrow scroll-arrow-left pizza-arrow-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="pizza-scroll-container">
+                            <div class="pizza-fade-left"></div>
+                            <div class="pizza-fade-right"></div>
+                            <div class="pizza-grid">
+                                <!-- PizzaStop Project Images (Reverse Order) -->
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/11.jpg" alt="Pizza Stop Project Image 11" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/10.jpg" alt="Pizza Stop Project Image 10" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/9.jpg" alt="Pizza Stop Project Image 9" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/8.jpg" alt="Pizza Stop Project Image 8" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/7.jpg" alt="Pizza Stop Project Image 7" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/6.jpg" alt="Pizza Stop Project Image 6" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/5.jpg" alt="Pizza Stop Project Image 5" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/4.jpg" alt="Pizza Stop Project Image 4" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/3.jpg" alt="Pizza Stop Project Image 3" class="pizza-image">
+                                </div>
+                                <div class="pizza-item hover-effect">
+                                    <img src="PizzaProject/2.jpg" alt="Pizza Stop Project Image 2" class="pizza-image">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="scroll-arrow scroll-arrow-right pizza-arrow-right">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="portfolio fade-in">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            
+            <!-- Vehicles Section -->
+            <div class="portfolio-category">
+                <h3 class="category-title">Vehicles</h3>
+                <div class="category-scroll-wrapper">
+                    <button class="scroll-arrow scroll-arrow-left" data-category="vehicles">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portfolio-scroll-container" data-category="vehicles">
+                        <div class="portfolio-fade-left"></div>
+                        <div class="portfolio-fade-right"></div>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item hover-effect" data-category="vehicles">
+                                <div class="portfolio-placeholder">
+                                    <span>Motorcycle Study #1</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="vehicles">
+                                <div class="portfolio-placeholder">
+                                    <span>Classic Car Portrait</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="vehicles">
+                                <div class="portfolio-placeholder">
+                                    <span>Racing Helmet Collection</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="vehicles">
+                                <div class="portfolio-placeholder">
+                                    <span>Speed Machine Art</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="vehicles">
+                                <div class="portfolio-placeholder">
+                                    <span>Urban Wheels</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="scroll-arrow scroll-arrow-right" data-category="vehicles">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- City Corners Section -->
+            <div class="portfolio-category">
+                <h3 class="category-title">City Corners</h3>
+                <div class="category-scroll-wrapper">
+                    <button class="scroll-arrow scroll-arrow-left" data-category="city">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portfolio-scroll-container" data-category="city">
+                        <div class="portfolio-fade-left"></div>
+                        <div class="portfolio-fade-right"></div>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item hover-effect" data-category="city">
+                                <div class="portfolio-placeholder">
+                                    <span>Bus Stop Morning</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="city">
+                                <div class="portfolio-placeholder">
+                                    <span>Pizza Market Scene</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="city">
+                                <div class="portfolio-placeholder">
+                                    <span>Urban Corner #3</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="city">
+                                <div class="portfolio-placeholder">
+                                    <span>Street Life Moments</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="city">
+                                <div class="portfolio-placeholder">
+                                    <span>City Rhythms</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="scroll-arrow scroll-arrow-right" data-category="city">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posters Section -->
+            <div class="portfolio-category">
+                <h3 class="category-title">Posters</h3>
+                <div class="category-scroll-wrapper">
+                    <button class="scroll-arrow scroll-arrow-left" data-category="posters">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portfolio-scroll-container" data-category="posters">
+                        <div class="portfolio-fade-left"></div>
+                        <div class="portfolio-fade-right"></div>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item hover-effect" data-category="posters">
+                                <div class="portfolio-placeholder">
+                                    <span>"Be Kind" Street Poster</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="posters">
+                                <div class="portfolio-placeholder">
+                                    <span>"Community Matters" Design</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="posters">
+                                <div class="portfolio-placeholder">
+                                    <span>"Spread Love" Campaign</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="posters">
+                                <div class="portfolio-placeholder">
+                                    <span>"Unity in Diversity"</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="posters">
+                                <div class="portfolio-placeholder">
+                                    <span>"Hope Lives Here"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="scroll-arrow scroll-arrow-right" data-category="posters">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Street Poster Project -->
+    <section id="street-posters" class="street-posters fade-in">
+        <div class="container">
+            <h2 class="section-title">Street Poster Project</h2>
+            <div class="poster-intro">
+                <p>Всяко ръчно изписано послание носи искра, надежда и усещане за общност, поставено внимателно върху стените на града, за да озари деня на всички минувачи.</p>
+            </div>
+            
+            <!-- Poster Gallery Grid -->
+            <div class="poster-gallery">
+                <div class="poster-item hover-effect" data-poster="poster-1">
+                    <img src="poesy/1_1_11zon.png" alt="Poster 1" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="poster-2">
+                    <img src="poesy/2_9_11zon.png" alt="Истинският Муж Закрила" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="christmas-miracle">
+                    <img src="poesy/christmas miracle_2_11zon.png" alt="Christmas Miracle" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="discipline-mother">
+                    <img src="poesy/discipline mother of the success_8_11zon.png" alt="Discipline Mother of Success" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="drive-safely">
+                    <img src="poesy/drive safely_7_11zon.png" alt="Drive Safely" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="family">
+                    <img src="poesy/family_3_11zon.png" alt="Family" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="her-eyes-blinks">
+                    <img src="poesy/her eyes blinks_5_11zon.png" alt="Her Eyes Blinks" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="motivation-girl">
+                    <img src="poesy/motivation girl_6_11zon.png" alt="Motivation Girl" class="poster-img">
+                </div>
+                
+                <div class="poster-item hover-effect" data-poster="she-ok-no">
+                    <img src="poesy/she ok no_4_11zon.png" alt="She OK No" class="poster-img">
+                </div>
+            </div>
+            
+            <div class="quote-section">
+                <blockquote class="poster-quote">
+                    "Art has the power to transform not just walls, but hearts. Every poster is a small gift to a stranger."
+                    <cite>— NaidenovART</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+<!-- Awards & Recognition -->
+    <section id="awards" class="awards fade-in">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item hover-effect">
+                    <div class="award-icon">🏆</div>
+                    <h3>National Art Excellence Award</h3>
+                    <p>2023</p>
+                    <span>Outstanding Urban Art</span>
+                </div>
+                <div class="award-item hover-effect">
+                    <div class="award-icon">🎨</div>
+                    <h3>Community Impact Prize</h3>
+                    <p>2022</p>
+                    <span>Street Poster Campaign</span>
+                </div>
+                <div class="award-item hover-effect">
+                    <div class="award-icon">⭐</div>
+                    <h3>Emerging Artist Recognition</h3>
+                    <p>2021</p>
+                    <span>Regional Art Council</span>
+                </div>
+                <div class="award-item hover-effect">
+                    <div class="award-icon">🏅</div>
+                    <h3>People's Choice Award</h3>
+                    <p>2023</p>
+                    <span>City Art Festival</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/naidenov_art/" class="contact-link hover-effect" target="_blank">
+                        <img src="Socials/instagram.webp" alt="Instagram" class="social-icon">
+                        @naidenov_art
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61573373319939" class="contact-link hover-effect" target="_blank">
+                        <img src="Socials/facebook.webp" alt="Facebook" class="social-icon">
+                        Facebook Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 NaidenovART. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close hover-effect">&times;</span>
+            <div class="lightbox-image">
+                <div class="lightbox-placeholder">
+                    <span>Full Size Artwork</span>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title">Artwork Title</h3>
+                <p id="lightbox-description">Artwork description goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
