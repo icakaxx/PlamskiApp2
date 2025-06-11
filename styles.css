@@ -648,6 +648,19 @@ section {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.portfolio-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.05);
+}
+
 .portfolio-placeholder {
     height: 250px;
     background: linear-gradient(45deg, #74b9ff, #0984e3);
@@ -702,8 +715,26 @@ section {
 
 /* Street Posters Section */
 .street-posters {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    position: relative;
+}
+
+.street-posters::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0.95;
+    z-index: 1;
+}
+
+.street-posters .container {
+    position: relative;
+    z-index: 2;
 }
 
 .street-posters .section-title {
@@ -1346,7 +1377,7 @@ section {
 
 .project-pizza .pizza-scroll-text-wrapper {
     position: relative;
-    height: 250px;
+    height: 375px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1390,21 +1421,27 @@ section {
 }
 
 .project-pizza .pizza-text-container {
-    position: relative;
-    flex: 1;
+    position: absolute;
+    top: 45px;
+    bottom: -25px;
+    left: 0;
+    right: 0;
     overflow: hidden;
-    padding: 10px 0;
-    margin: 0 10px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .project-pizza .pizza-description {
-    height: 100%;
+    flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    padding-right: 10px;
+    padding: 0 10px 0 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    margin: 0;
 }
 
 .project-pizza .pizza-description::-webkit-scrollbar {
@@ -1594,74 +1631,134 @@ section {
 
 .project-pizza .pizza-fade-top,
 .project-pizza .pizza-fade-bottom {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 30px;
-    z-index: 5;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
 .project-pizza .pizza-fade-top {
-    top: 0;
+    top: 45px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
 }
 
 .project-pizza .pizza-fade-bottom {
-    bottom: 0;
+    bottom: 55px;
     background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
 }
 
 /* Awards Section */
 .awards {
-    background: #f8f9fa;
+    background: url('Awards/background.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.awards::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('Awards/background.jpg') center/cover no-repeat;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.awards .container {
+    position: relative;
+    z-index: 2;
+}
+
+.awards-scroll-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.awards-scroll-container {
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 100%;
+}
+
+.awards-scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
 .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
     gap: 2rem;
+    padding: 0 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.awards-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .award-item {
+    min-width: 280px;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
     background: white;
-    padding: 2rem;
     border-radius: 15px;
-    text-align: center;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .award-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.award-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
+.award-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
 }
 
-.award-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+.award-item:hover .award-image {
+    transform: scale(1.05);
 }
 
-.award-item p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ff6b6b;
-    margin-bottom: 0.5rem;
+.awards-fade-left,
+.awards-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-.award-item span {
-    font-size: 0.9rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.awards-fade-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.awards-fade-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.awards-fade-left.hidden,
+.awards-fade-right.hidden {
+    opacity: 0;
 }
 
 /* Contact Section */

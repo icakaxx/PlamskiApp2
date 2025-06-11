@@ -150,9 +150,80 @@ function initializePortfolioCategory(category) {
 }
 
 // Initialize all portfolio categories
-['vehicles', 'city', 'posters'].forEach(category => {
+    ['cars', 'motors', 'helmets'].forEach(category => {
     initializePortfolioCategory(category);
 });
+
+// Awards Scroll Functionality
+function initializeAwardsScroll() {
+    const scrollContainer = document.querySelector('.awards-scroll-container');
+    const awardsGrid = document.querySelector('.awards-grid');
+    const leftArrow = document.querySelector('.scroll-arrow-left[data-category="awards"]');
+    const rightArrow = document.querySelector('.scroll-arrow-right[data-category="awards"]');
+    const fadeLeft = document.querySelector('.awards-fade-left');
+    const fadeRight = document.querySelector('.awards-fade-right');
+    
+    if (!awardsGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) return;
+    
+    const scrollAmount = 300; // pixels to scroll per click
+    
+    // Arrow click handlers
+    leftArrow.addEventListener('click', () => {
+        awardsGrid.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    rightArrow.addEventListener('click', () => {
+        awardsGrid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Update arrow states and fade effects
+    function updateScrollEffects() {
+        const { scrollLeft, scrollWidth, clientWidth } = awardsGrid;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        // Update arrow states
+        leftArrow.disabled = scrollLeft <= 5;
+        rightArrow.disabled = scrollLeft >= maxScroll - 5;
+        
+        // Update fade effects
+        if (scrollLeft <= 5) {
+            fadeLeft.classList.add('hidden');
+        } else {
+            fadeLeft.classList.remove('hidden');
+        }
+        
+        if (scrollLeft >= maxScroll - 5) {
+            fadeRight.classList.add('hidden');
+        } else {
+            fadeRight.classList.remove('hidden');
+        }
+        
+        // Hide fades if no overflow
+        if (maxScroll <= 0) {
+            fadeLeft.classList.add('hidden');
+            fadeRight.classList.add('hidden');
+            leftArrow.disabled = true;
+            rightArrow.disabled = true;
+        }
+    }
+    
+    // Listen for scroll events
+    awardsGrid.addEventListener('scroll', updateScrollEffects);
+    
+    // Initial check
+    setTimeout(updateScrollEffects, 100);
+    
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        setTimeout(updateScrollEffects, 100);
+    });
+}
 
 // Initialize portfolio items as visible
 const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -459,6 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeStoryScroll();
         initializePizzaProject();
         initializePizzaTextScroll();
+        initializeAwardsScroll();
     }, 500);
 });
 
