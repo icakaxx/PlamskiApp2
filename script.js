@@ -79,80 +79,158 @@ document.querySelectorAll('.fade-in').forEach(el => {
 });
 
 // Portfolio Scroll Arrows and Fade Effects
-function initializePortfolioCategory(category) {
-    const scrollContainer = document.querySelector(`.portfolio-scroll-container[data-category="${category}"]`);
+// Create separate functions for each portfolio category (like Pizza approach)
+function initializeCarsPortfolio() {
+    const scrollContainer = document.querySelector('.portfolio-scroll-container[data-category="cars"]');
     const portfolioGrid = scrollContainer?.querySelector('.portfolio-grid');
-    const leftArrow = document.querySelector(`.scroll-arrow-left[data-category="${category}"]`);
-    const rightArrow = document.querySelector(`.scroll-arrow-right[data-category="${category}"]`);
+    const leftArrow = document.querySelector('.scroll-arrow-left[data-category="cars"]');
+    const rightArrow = document.querySelector('.scroll-arrow-right[data-category="cars"]');
     const fadeLeft = scrollContainer?.querySelector('.portfolio-fade-left');
     const fadeRight = scrollContainer?.querySelector('.portfolio-fade-right');
     
-    if (!portfolioGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) return;
+    if (!portfolioGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
+        console.log('Cars portfolio elements not found');
+        return;
+    }
     
-    const scrollAmount = 300; // pixels to scroll per click
+    const scrollAmount = 320;
     
-    // Arrow click handlers
     leftArrow.addEventListener('click', () => {
-        portfolioGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+        console.log('Cars Left arrow clicked');
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
-        portfolioGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+        console.log('Cars Right arrow clicked');
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
     });
     
-    // Update arrow states and fade effects
     function updateScrollEffects() {
-        const { scrollLeft, scrollWidth, clientWidth } = portfolioGrid;
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
         const maxScroll = scrollWidth - clientWidth;
         
-        // Update arrow states
         leftArrow.disabled = scrollLeft <= 5;
         rightArrow.disabled = scrollLeft >= maxScroll - 5;
         
-        // Update fade effects
-        if (scrollLeft <= 5) {
-            fadeLeft.classList.add('hidden');
-        } else {
-            fadeLeft.classList.remove('hidden');
-        }
+        fadeLeft.style.opacity = scrollLeft <= 5 ? '0' : '1';
+        fadeRight.style.opacity = scrollLeft >= maxScroll - 5 ? '0' : '1';
         
-        if (scrollLeft >= maxScroll - 5) {
-            fadeRight.classList.add('hidden');
-        } else {
-            fadeRight.classList.remove('hidden');
-        }
-        
-        // Hide fades if no overflow
         if (maxScroll <= 0) {
-            fadeLeft.classList.add('hidden');
-            fadeRight.classList.add('hidden');
+            fadeLeft.style.opacity = '0';
+            fadeRight.style.opacity = '0';
             leftArrow.disabled = true;
             rightArrow.disabled = true;
         }
     }
     
-    // Listen for scroll events
-    portfolioGrid.addEventListener('scroll', updateScrollEffects);
-    
-    // Initial check
+    scrollContainer.addEventListener('scroll', updateScrollEffects);
     setTimeout(updateScrollEffects, 100);
-    
-    // Update on window resize
-    window.addEventListener('resize', () => {
-        setTimeout(updateScrollEffects, 100);
-    });
+    window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
 }
 
-// Initialize all portfolio categories
-    ['cars', 'motors', 'helmets'].forEach(category => {
-    initializePortfolioCategory(category);
-});
+function initializeMotorsPortfolio() {
+    const scrollContainer = document.querySelector('.portfolio-scroll-container[data-category="motors"]');
+    const portfolioGrid = scrollContainer?.querySelector('.portfolio-grid');
+    const leftArrow = document.querySelector('.scroll-arrow-left[data-category="motors"]');
+    const rightArrow = document.querySelector('.scroll-arrow-right[data-category="motors"]');
+    const fadeLeft = scrollContainer?.querySelector('.portfolio-fade-left');
+    const fadeRight = scrollContainer?.querySelector('.portfolio-fade-right');
+    
+    if (!portfolioGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
+        console.log('Motors portfolio elements not found');
+        return;
+    }
+    
+    const scrollAmount = 320;
+    
+    leftArrow.addEventListener('click', () => {
+        console.log('Motors Left arrow clicked');
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
+    });
+    
+    rightArrow.addEventListener('click', () => {
+        console.log('Motors Right arrow clicked');
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
+    });
+    
+    function updateScrollEffects() {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        leftArrow.disabled = scrollLeft <= 5;
+        rightArrow.disabled = scrollLeft >= maxScroll - 5;
+        
+        fadeLeft.style.opacity = scrollLeft <= 5 ? '0' : '1';
+        fadeRight.style.opacity = scrollLeft >= maxScroll - 5 ? '0' : '1';
+        
+        if (maxScroll <= 0) {
+            fadeLeft.style.opacity = '0';
+            fadeRight.style.opacity = '0';
+            leftArrow.disabled = true;
+            rightArrow.disabled = true;
+        }
+    }
+    
+    scrollContainer.addEventListener('scroll', updateScrollEffects);
+    setTimeout(updateScrollEffects, 100);
+    window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
+}
+
+function initializeHelmetsPortfolio() {
+    const scrollContainer = document.querySelector('.portfolio-scroll-container[data-category="helmets"]');
+    const portfolioGrid = scrollContainer?.querySelector('.portfolio-grid');
+    const leftArrow = document.querySelector('.scroll-arrow-left[data-category="helmets"]');
+    const rightArrow = document.querySelector('.scroll-arrow-right[data-category="helmets"]');
+    const fadeLeft = scrollContainer?.querySelector('.portfolio-fade-left');
+    const fadeRight = scrollContainer?.querySelector('.portfolio-fade-right');
+    
+    if (!portfolioGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
+        console.log('Helmets portfolio elements not found');
+        return;
+    }
+    
+    const scrollAmount = 320;
+    
+    leftArrow.addEventListener('click', () => {
+        console.log('Helmets Left arrow clicked');
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
+    });
+    
+    rightArrow.addEventListener('click', () => {
+        console.log('Helmets Right arrow clicked');
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateScrollEffects, 100);
+    });
+    
+    function updateScrollEffects() {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        leftArrow.disabled = scrollLeft <= 5;
+        rightArrow.disabled = scrollLeft >= maxScroll - 5;
+        
+        fadeLeft.style.opacity = scrollLeft <= 5 ? '0' : '1';
+        fadeRight.style.opacity = scrollLeft >= maxScroll - 5 ? '0' : '1';
+        
+        if (maxScroll <= 0) {
+            fadeLeft.style.opacity = '0';
+            fadeRight.style.opacity = '0';
+            leftArrow.disabled = true;
+            rightArrow.disabled = true;
+        }
+    }
+    
+    scrollContainer.addEventListener('scroll', updateScrollEffects);
+    setTimeout(updateScrollEffects, 100);
+    window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
+}
+
+// Portfolio categories will be initialized in DOMContentLoaded
 
 // Awards Scroll Functionality
 function initializeAwardsScroll() {
@@ -225,46 +303,44 @@ function initializeAwardsScroll() {
     });
 }
 
-// Initialize portfolio items as visible
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-portfolioItems.forEach(item => {
-    item.classList.add('visible');
-});
+// Portfolio items will be initialized in DOMContentLoaded
 
 // Project Alfa Scroll Functionality
 function initializeProjectAlfa() {
-    const scrollContainer = document.querySelector('.alfa-scroll-container');
-    const alfaGrid = document.querySelector('.alfa-grid');
+    const scrollContainer = document.querySelector('.alfa-carousel-content-full .alfa-scroll-container');
+    const alfaGrid = document.querySelector('.alfa-carousel-content-full .alfa-grid');
     const leftArrow = document.querySelector('.alfa-arrow-left');
     const rightArrow = document.querySelector('.alfa-arrow-right');
-    const fadeLeft = document.querySelector('.alfa-fade-left');
-    const fadeRight = document.querySelector('.alfa-fade-right');
+    const fadeLeft = document.querySelector('.alfa-carousel-content-full .alfa-fade-left');
+    const fadeRight = document.querySelector('.alfa-carousel-content-full .alfa-fade-right');
     
     if (!alfaGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
         console.log('Project Alfa elements not found');
         return;
     }
     
-    const scrollAmount = 380; // pixels to scroll per click (adjusted for 350px + gap)
+    const scrollAmount = 320; // pixels to scroll per click (optimized for 3-item view)
     
     // Arrow click handlers
     leftArrow.addEventListener('click', () => {
-        console.log('Left arrow clicked');
+        console.log('Alfa Left arrow clicked');
         alfaGrid.scrollBy({
             left: -scrollAmount,
             behavior: 'smooth'
         });
+        setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
-        console.log('Right arrow clicked');
+        console.log('Alfa Right arrow clicked');
         alfaGrid.scrollBy({
             left: scrollAmount,
             behavior: 'smooth'
         });
+        setTimeout(updateScrollEffects, 100);
     });
     
-    // Update arrow states and fade effects
+    // Update arrow states, fade effects, and center image highlighting
     function updateScrollEffects() {
         const { scrollLeft, scrollWidth, clientWidth } = alfaGrid;
         const maxScroll = scrollWidth - clientWidth;
@@ -292,6 +368,35 @@ function initializeProjectAlfa() {
             fadeRight.style.opacity = '0';
             leftArrow.disabled = true;
             rightArrow.disabled = true;
+        }
+        
+        // Update center image highlighting
+        updateCenterImage();
+    }
+    
+    // Function to highlight the center image
+    function updateCenterImage() {
+        const items = alfaGrid.querySelectorAll('.alfa-item');
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+        
+        let centerItem = null;
+        let minDistance = Infinity;
+        
+        items.forEach(item => {
+            item.classList.remove('center');
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.left + itemRect.width / 2;
+            const distance = Math.abs(containerCenter - itemCenter);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
+                centerItem = item;
+            }
+        });
+        
+        if (centerItem) {
+            centerItem.classList.add('center');
         }
     }
     
@@ -379,38 +484,40 @@ function initializeStoryScroll() {
 
 // Pizza Project Scroll Functionality
 function initializePizzaProject() {
-    const scrollContainer = document.querySelector('.pizza-scroll-container');
-    const pizzaGrid = document.querySelector('.pizza-grid');
+    const scrollContainer = document.querySelector('.pizza-carousel-content-full .pizza-scroll-container');
+    const pizzaGrid = document.querySelector('.pizza-carousel-content-full .pizza-grid');
     const leftArrow = document.querySelector('.pizza-arrow-left');
     const rightArrow = document.querySelector('.pizza-arrow-right');
-    const fadeLeft = document.querySelector('.pizza-fade-left');
-    const fadeRight = document.querySelector('.pizza-fade-right');
+    const fadeLeft = document.querySelector('.pizza-carousel-content-full .pizza-fade-left');
+    const fadeRight = document.querySelector('.pizza-carousel-content-full .pizza-fade-right');
     
     if (!pizzaGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
         console.log('Pizza elements not found');
         return;
     }
     
-    const scrollAmount = 300; // pixels to scroll per click (adjusted for 280px + gap)
+    const scrollAmount = 320; // pixels to scroll per click (optimized for 3-item view)
     
     // Arrow click handlers
     leftArrow.addEventListener('click', () => {
-        console.log('Left arrow clicked');
+        console.log('Pizza Left arrow clicked');
         pizzaGrid.scrollBy({
             left: -scrollAmount,
             behavior: 'smooth'
         });
+        setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
-        console.log('Right arrow clicked');
+        console.log('Pizza Right arrow clicked');
         pizzaGrid.scrollBy({
             left: scrollAmount,
             behavior: 'smooth'
         });
+        setTimeout(updateScrollEffects, 100);
     });
     
-    // Update arrow states and fade effects
+    // Update arrow states, fade effects, and center image highlighting
     function updateScrollEffects() {
         const { scrollLeft, scrollWidth, clientWidth } = pizzaGrid;
         const maxScroll = scrollWidth - clientWidth;
@@ -438,6 +545,35 @@ function initializePizzaProject() {
             fadeRight.style.opacity = '0';
             leftArrow.disabled = true;
             rightArrow.disabled = true;
+        }
+        
+        // Update center image highlighting
+        updateCenterImagePizza();
+    }
+    
+    // Function to highlight the center image
+    function updateCenterImagePizza() {
+        const items = pizzaGrid.querySelectorAll('.pizza-item');
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+        
+        let centerItem = null;
+        let minDistance = Infinity;
+        
+        items.forEach(item => {
+            item.classList.remove('center');
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.left + itemRect.width / 2;
+            const distance = Math.abs(containerCenter - itemCenter);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
+                centerItem = item;
+            }
+        });
+        
+        if (centerItem) {
+            centerItem.classList.add('center');
         }
     }
     
@@ -523,10 +659,27 @@ function initializePizzaTextScroll() {
     });
 }
 
-// Initialize Project Alfa after DOM is loaded
+// Initialize all sections after DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
+        // Initialize portfolio items as visible
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        portfolioItems.forEach(item => {
+            item.classList.add('visible');
+        });
+        
+        // Initialize portfolio-related functions
+        addPortfolioAnimationDelays();
+        initializeLightbox();
+        
+        // Initialize portfolio categories (separate functions like Pizza approach)
+        initializeCarsPortfolio();
+        initializeMotorsPortfolio();
+        initializeHelmetsPortfolio();
+        
+        // Initialize project sections
         initializeProjectAlfa();
+        initializeAseamProject();
         initializeStoryScroll();
         initializePizzaProject();
         initializePizzaTextScroll();
@@ -580,20 +733,23 @@ const artworkData = {
     }
 };
 
-// Open lightbox
-portfolioItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const artworkTitle = item.querySelector('span').textContent;
-        const artwork = artworkData[artworkTitle];
-        
-        if (artwork) {
-            lightboxTitle.textContent = artwork.title;
-            lightboxDescription.textContent = artwork.description;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+// Open lightbox - will be initialized in DOMContentLoaded
+function initializeLightbox() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    portfolioItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const artworkTitle = item.querySelector('span').textContent;
+            const artwork = artworkData[artworkTitle];
+            
+            if (artwork) {
+                lightboxTitle.textContent = artwork.title;
+                lightboxDescription.textContent = artwork.description;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
     });
-});
+}
 
 // Close lightbox
 lightboxClose.addEventListener('click', closeLightbox);
@@ -618,25 +774,27 @@ document.addEventListener('keydown', (e) => {
 // Contact Form
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    // Simple validation
-    if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
-    }
-    
-    // Simulate form submission
-    showNotification('Thank you for your message! I\'ll get back to you soon.');
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Simple validation
+        if (!name || !email || !message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        // Simulate form submission
+        showNotification('Thank you for your message! I\'ll get back to you soon.');
+        contactForm.reset();
+    });
+}
 
 // Notification system
 function showNotification(message) {
@@ -751,13 +909,17 @@ awardItems.forEach(item => {
 const posterItems = document.querySelectorAll('.poster-item');
 posterItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
-        const image = item.querySelector('.poster-placeholder');
-        image.style.transform = 'scale(1.05) rotate(2deg)';
+        const image = item.querySelector('.poster-img');
+        if (image) {
+            image.style.transform = 'scale(1.05) rotate(2deg)';
+        }
     });
     
     item.addEventListener('mouseleave', () => {
-        const image = item.querySelector('.poster-placeholder');
-        image.style.transform = 'scale(1) rotate(0deg)';
+        const image = item.querySelector('.poster-img');
+        if (image) {
+            image.style.transform = 'scale(1) rotate(0deg)';
+        }
     });
 });
 
@@ -788,10 +950,13 @@ window.addEventListener('load', () => {
     }, 1000);
 });
 
-// Add random animation delays to portfolio items
-portfolioItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.1}s`;
-});
+// Portfolio animation delays will be added in DOMContentLoaded
+function addPortfolioAnimationDelays() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    portfolioItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+}
 
 // Enhanced scroll indicator
 const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -876,4 +1041,111 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-console.log('🎨 NaidenovART Portfolio loaded! Try the Konami Code for a surprise...'); 
+console.log('🎨 NaidenovART Portfolio loaded! Try the Konami Code for a surprise...');
+
+// ASEAM Project Scroll Functionality
+function initializeAseamProject() {
+    const scrollContainer = document.querySelector('.aseam-carousel-content-full .aseam-scroll-container');
+    const aseamGrid = document.querySelector('.aseam-carousel-content-full .aseam-grid');
+    const leftArrow = document.querySelector('.aseam-arrow-left');
+    const rightArrow = document.querySelector('.aseam-arrow-right');
+    const fadeLeft = document.querySelector('.aseam-carousel-content-full .aseam-fade-left');
+    const fadeRight = document.querySelector('.aseam-carousel-content-full .aseam-fade-right');
+    
+    if (!aseamGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
+        console.log('ASEAM elements not found');
+        return;
+    }
+    
+         const scrollAmount = 320; // pixels to scroll per click (optimized for 3-item view)
+     
+     // Arrow click handlers
+     leftArrow.addEventListener('click', () => {
+         console.log('ASEAM Left arrow clicked');
+         aseamGrid.scrollBy({
+             left: -scrollAmount,
+             behavior: 'smooth'
+         });
+         setTimeout(updateScrollEffects, 100);
+     });
+     
+     rightArrow.addEventListener('click', () => {
+         console.log('ASEAM Right arrow clicked');
+         aseamGrid.scrollBy({
+             left: scrollAmount,
+             behavior: 'smooth'
+         });
+         setTimeout(updateScrollEffects, 100);
+     });
+    
+         // Update arrow states, fade effects, and center image highlighting
+     function updateScrollEffects() {
+         const { scrollLeft, scrollWidth, clientWidth } = aseamGrid;
+         const maxScroll = scrollWidth - clientWidth;
+         
+         // Update arrow states
+         leftArrow.disabled = scrollLeft <= 5;
+         rightArrow.disabled = scrollLeft >= maxScroll - 5;
+         
+         // Update fade effects
+         if (scrollLeft <= 5) {
+             fadeLeft.style.opacity = '0';
+         } else {
+             fadeLeft.style.opacity = '1';
+         }
+         
+         if (scrollLeft >= maxScroll - 5) {
+             fadeRight.style.opacity = '0';
+         } else {
+             fadeRight.style.opacity = '1';
+         }
+         
+         // Hide fades if no overflow
+         if (maxScroll <= 0) {
+             fadeLeft.style.opacity = '0';
+             fadeRight.style.opacity = '0';
+             leftArrow.disabled = true;
+             rightArrow.disabled = true;
+         }
+         
+         // Update center image highlighting
+         updateCenterImageAseam();
+     }
+     
+     // Function to highlight the center image
+     function updateCenterImageAseam() {
+         const items = aseamGrid.querySelectorAll('.aseam-item');
+         const containerRect = scrollContainer.getBoundingClientRect();
+         const containerCenter = containerRect.left + containerRect.width / 2;
+         
+         let centerItem = null;
+         let minDistance = Infinity;
+         
+         items.forEach(item => {
+             item.classList.remove('center');
+             const itemRect = item.getBoundingClientRect();
+             const itemCenter = itemRect.left + itemRect.width / 2;
+             const distance = Math.abs(containerCenter - itemCenter);
+             
+             if (distance < minDistance) {
+                 minDistance = distance;
+                 centerItem = item;
+             }
+         });
+         
+         if (centerItem) {
+             centerItem.classList.add('center');
+         }
+     }
+    
+    // Listen for scroll events
+    aseamGrid.addEventListener('scroll', updateScrollEffects);
+    
+    // Initial check
+    setTimeout(updateScrollEffects, 100);
+    
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        setTimeout(updateScrollEffects, 100);
+    });
+} 

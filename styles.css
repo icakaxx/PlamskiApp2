@@ -38,16 +38,56 @@ body {
 }
 
 .nav-logo span {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
     font-weight: 800;
     color: #74b9ff;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
+    line-height: 1;
+    width: 200px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-menu {
     display: flex;
     gap: 2rem;
     align-items: center;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: #74b9ff;
+    transform: translateY(-1px);
+}
+
+.lang-btn.active {
+    color: #74b9ff;
+    background: rgba(116, 185, 255, 0.1);
+}
+
+.language-switch span {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
 }
 
 .nav-link {
@@ -554,7 +594,25 @@ section {
 
 /* Portfolio Section */
 .portfolio {
-    background: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    padding: 120px 0;
+    position: relative;
+}
+
+.portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.portfolio .container {
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-category {
@@ -570,15 +628,25 @@ section {
 }
 
 .category-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 20px;
 }
 
 .portfolio-scroll-container {
-    position: relative;
-    overflow: hidden;
     flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    padding: 40px 20px;
+    height: 400px;
+    display: flex;
+    align-items: center;
 }
 
 .scroll-arrow {
@@ -618,46 +686,56 @@ section {
 
 .portfolio-grid {
     display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scroll-snap-type: x proximity; /* Optional: snap to cards */
-}
-
-.portfolio-grid::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    gap: 30px;
+    padding: 0;
+    width: max-content;
+    align-items: center;
 }
 
 .portfolio-item {
-    cursor: pointer;
+    flex: 0 0 auto;
+    width: 280px;
+    height: 200px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    flex: 0 0 280px; /* Fixed width for horizontal scrolling */
-    min-height: 250px;
-    scroll-snap-align: start; /* Snap alignment for smooth scrolling */
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+/* Center item effect for portfolio */
+.portfolio-item.center {
+    width: 380px;
+    height: 280px;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item.center:hover {
+    transform: translateY(-10px) scale(1.1);
 }
 
 .portfolio-img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 15px;
 }
 
 .portfolio-item:hover .portfolio-img {
+    transform: scale(1.1);
+}
+
+.portfolio-item.center:hover .portfolio-img {
     transform: scale(1.05);
 }
 
@@ -699,12 +777,13 @@ section {
 
 .portfolio-fade-left {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #667eea 0%, rgba(102, 126, 234, 0.8) 30%, rgba(102, 126, 234, 0) 100%);
 }
 
 .portfolio-fade-right {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+    background: none;
+    display: none;
 }
 
 /* Hide fade effects when not needed */
@@ -863,6 +942,11 @@ section {
     padding: 120px 2rem;
 }
 
+.project-alfa .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .project-alfa .section-title {
     position: relative;
     margin-bottom: 4rem;
@@ -884,11 +968,6 @@ section {
 @keyframes expandLine {
     from { width: 0; }
     to { width: 80px; }
-}
-
-.project-alfa .container {
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .project-alfa .alfa-content-wrapper {
@@ -1089,10 +1168,181 @@ section {
     background: linear-gradient(to left, #90caf9, transparent);
 }
 
+/* Full-width carousel styles for centered, larger images with 3-image view */
+.project-alfa .alfa-carousel-content-full,
+.project-aseam .aseam-carousel-content-full,
+.project-pizza .pizza-carousel-content-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-scroll-wrapper,
+.project-aseam .aseam-carousel-content-full .aseam-scroll-wrapper,
+.project-pizza .pizza-carousel-content-full .pizza-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-scroll-container,
+.project-aseam .aseam-carousel-content-full .aseam-scroll-container,
+.project-pizza .pizza-carousel-content-full .pizza-scroll-container {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    padding: 40px 20px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-grid,
+.project-aseam .aseam-carousel-content-full .aseam-grid,
+.project-pizza .pizza-carousel-content-full .pizza-grid {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    width: max-content;
+    align-items: center;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-item,
+.project-aseam .aseam-carousel-content-full .aseam-item,
+.project-pizza .pizza-carousel-content-full .pizza-item {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+/* Center item effect for portfolio */
+.project-alfa .alfa-carousel-content-full .alfa-item.center,
+.project-aseam .aseam-carousel-content-full .aseam-item.center,
+.project-pizza .pizza-carousel-content-full .pizza-item.center {
+    width: 380px;
+    height: 280px;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-item:hover,
+.project-aseam .aseam-carousel-content-full .aseam-item:hover,
+.project-pizza .pizza-carousel-content-full .pizza-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-image,
+.project-aseam .aseam-carousel-content-full .aseam-image,
+.project-pizza .pizza-carousel-content-full .pizza-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.project-alfa .alfa-carousel-content-full .alfa-item:hover .alfa-image,
+.project-aseam .aseam-carousel-content-full .aseam-item:hover .aseam-image,
+.project-pizza .pizza-carousel-content-full .pizza-item:hover .pizza-image {
+    transform: scale(1.1);
+}
+
+.project-alfa .alfa-carousel-content-full .aseam-placeholder,
+.project-aseam .aseam-carousel-content-full .aseam-placeholder,
+.project-pizza .pizza-carousel-content-full .pizza-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+/* Mobile responsiveness for full-width carousels and portfolio */
+@media (max-width: 768px) {
+    .project-alfa .alfa-carousel-content-full .alfa-item,
+    .project-aseam .aseam-carousel-content-full .aseam-item,
+    .project-pizza .pizza-carousel-content-full .pizza-item,
+    .portfolio-item {
+        width: 250px;
+        height: 180px;
+    }
+    
+    .project-alfa .alfa-carousel-content-full .alfa-item.center,
+    .project-aseam .aseam-carousel-content-full .aseam-item.center,
+    .project-pizza .pizza-carousel-content-full .pizza-item.center,
+    .portfolio-item.center {
+        width: 320px;
+        height: 240px;
+    }
+    
+    .project-alfa .alfa-carousel-content-full .alfa-grid,
+    .project-aseam .aseam-carousel-content-full .aseam-grid,
+    .project-pizza .pizza-carousel-content-full .pizza-grid,
+    .portfolio-grid {
+        gap: 20px;
+    }
+    
+    .portfolio-scroll-container {
+        height: 320px;
+        padding: 30px 15px;
+    }
+    
+    .category-scroll-wrapper {
+        max-width: 100%;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-alfa .alfa-carousel-content-full .alfa-item,
+    .project-aseam .aseam-carousel-content-full .aseam-item,
+    .project-pizza .pizza-carousel-content-full .pizza-item,
+    .portfolio-item {
+        width: 220px;
+        height: 160px;
+    }
+    
+    .project-alfa .alfa-carousel-content-full .alfa-item.center,
+    .project-aseam .aseam-carousel-content-full .aseam-item.center,
+    .project-pizza .pizza-carousel-content-full .pizza-item.center,
+    .portfolio-item.center {
+        width: 280px;
+        height: 200px;
+    }
+    
+    .portfolio-scroll-container {
+        height: 280px;
+        padding: 20px 10px;
+    }
+}
+
 /* ASEA-M Detailing Studio Project Styles */
 .project-aseam {
     background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 50%, #ffb74d 100%);
     padding: 120px 2rem;
+}
+
+.project-aseam .container {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .project-aseam .section-title {
@@ -1111,11 +1361,6 @@ section {
     background: linear-gradient(90deg, #e65100, #ff9800);
     border-radius: 2px;
     animation: expandLine 0.8s ease-out;
-}
-
-.project-aseam .container {
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .project-aseam .aseam-content-wrapper {
@@ -1314,6 +1559,11 @@ section {
     padding: 120px 2rem;
 }
 
+.project-pizza .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .project-pizza .section-title {
     position: relative;
     margin-bottom: 4rem;
@@ -1330,11 +1580,6 @@ section {
     background: linear-gradient(90deg, #c62828, #f44336);
     border-radius: 2px;
     animation: expandLine 0.8s ease-out;
-}
-
-.project-pizza .container {
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .project-pizza .pizza-content-wrapper {

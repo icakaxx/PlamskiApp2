@@ -15,18 +15,23 @@
                 <span>NaidenovART</span>
             </div>
             <div class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
+                <a href="#about" class="nav-link" data-en="About" data-bg="За мен">About</a>
                 <div class="nav-dropdown">
-                    <a href="#projects" class="nav-link dropdown-toggle">Projects</a>
+                    <a href="#projects" class="nav-link dropdown-toggle" data-en="Projects" data-bg="Проекти">Projects</a>
                     <div class="dropdown-menu">
                         <a href="#projects" class="dropdown-item">Alfa Romeo 156</a>
                         <a href="#aseam-detailing" class="dropdown-item">ASEA-M Detailing Studio</a>
                         <a href="#pizza-stop" class="dropdown-item">PizzaStop</a>
                     </div>
                 </div>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#street-posters" class="nav-link">Street Posters</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#portfolio" class="nav-link" data-en="Portfolio" data-bg="Портфолио">Portfolio</a>
+                <a href="#street-posters" class="nav-link" data-en="Street Posters" data-bg="Улични постери">Street Posters</a>
+                <a href="#contact" class="nav-link" data-en="Contact" data-bg="Контакт">Contact</a>
+                <div class="language-switch">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span>/</span>
+                    <button class="lang-btn" data-lang="bg">БГ</button>
+                </div>
             </div>
             <div class="nav-toggle">
                 <span class="bar"></span>
@@ -43,8 +48,8 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title">NaidenovART</h1>
-            <p class="hero-subtitle">Рисуване по всичко</p>
-            <button class="cta-button hover-effect" onclick="scrollToSection('portfolio')">
+            <p class="hero-subtitle" data-en="Drawing on Everything" data-bg="Рисуване по всичко">Drawing on Everything</p>
+            <button class="cta-button hover-effect" onclick="scrollToSection('portfolio')" data-en="View Portfolio" data-bg="Виж портфолио">
                 View Portfolio
             </button>
         </div>
@@ -56,7 +61,7 @@
     <!-- About Section -->
     <section id="about" class="about fade-in">
         <div class="container">
-            <h2 class="section-title">About NaidenovART</h2>
+            <h2 class="section-title" data-en="About NaidenovART" data-bg="За NaidenovART">About NaidenovART</h2>
             <div class="about-content">
                 <div class="about-text">
                     <div class="story-container">
@@ -89,15 +94,15 @@
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <span class="highlight-number">2</span>
-                            <span class="highlight-text">National Awards</span>
+                            <span class="highlight-text" data-en="National Awards" data-bg="Национални награди">National Awards</span>
                         </div>
                         <div class="highlight-item">
                             <span class="highlight-number">9</span>
-                            <span class="highlight-text">Street Posters Initiatives</span>
+                            <span class="highlight-text" data-en="Street Posters Initiatives" data-bg="Инициативи с улични постери">Street Posters Initiatives</span>
                         </div>
                         <div class="highlight-item">
                             <span class="highlight-number">100+</span>
-                            <span class="highlight-text">Drawings</span>
+                            <span class="highlight-text" data-en="Drawings" data-bg="Рисунки">Drawings</span>
                         </div>
                     </div>
                 </div>
@@ -111,20 +116,9 @@
     <!-- Alfa Romeo 156 Project -->
     <section id="projects" class="project-alfa fade-in">
         <div class="container">
-            <h2 class="section-title">Alfa Romeo 156</h2>
+            <h2 class="section-title" data-en="Alfa Romeo 156" data-bg="Алфа Ромео 156">Alfa Romeo 156</h2>
             <div class="alfa-content-wrapper">
-                <div class="alfa-left-section">
-                    <div class="alfa-text-content">
-                        <div class="alfa-description">
-                            <p>Една импровизация, целяща да направи старата ми трошка атрактивна.</p>
-                            <p>Огромно благодаря на @gp__baby ,който присърце направи колата ми от ритнат чайник в лъскава баба!</p>
-                            <p>Благодаря на моите приятели и любовта ми, които бяха плътно до мен и подкрепиха тази идея, докато всеки в околността ме съветваше "да не я правя циганска".</p>
-                            <p>Една малка увереност, която ми трябваше за смелостта да направя това нещо е факт, благодарение на всички тях!</p>
-                            <p class="alfa-signature"><strong>NAIDENOVART - Различното ✌️</strong></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="alfa-carousel-content">
+                <div class="alfa-carousel-content-full">
                     <div class="alfa-scroll-wrapper">
                         <button class="scroll-arrow scroll-arrow-left alfa-arrow-left">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -182,17 +176,9 @@
     <!-- AseamDetailing Project -->
     <section id="aseam-detailing" class="project-aseam fade-in">
         <div class="container">
-            <h2 class="section-title">ASEA-M Detailing Studio</h2>
+            <h2 class="section-title" data-en="ASEA-M Detailing Studio" data-bg="ASEA-M Детайлинг студио">ASEA-M Detailing Studio</h2>
             <div class="aseam-content-wrapper">
-                <div class="aseam-left-section">
-                    <div class="aseam-text-content">
-                        <div class="aseam-description">
-                            <p>Щастлив и благодарен съм за доверието да променя облика на едно от бъдещите най-добри детайлинг студия в България! 🔥💪</p>
-                            <p class="aseam-signature"><strong>NAIDENOVART - Различното 🐝</strong></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="aseam-carousel-content">
+                <div class="aseam-carousel-content-full">
                     <div class="aseam-scroll-wrapper">
                         <button class="scroll-arrow scroll-arrow-left aseam-arrow-left">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -203,24 +189,48 @@
                             <div class="aseam-fade-left"></div>
                             <div class="aseam-fade-right"></div>
                             <div class="aseam-grid">
-                                <!-- ASEA-M Detailing Studio Placeholder Images -->
+                                <!-- ASEA-M Detailing Studio Images (Starting with image 3) -->
                                 <div class="aseam-item hover-effect">
-                                    <div class="aseam-placeholder">
-                                        <span>ASEA-M Studio #1</span>
-                                        <small>Coming Soon</small>
-                                    </div>
+                                    <img src="Aseam/3.png" alt="ASEA-M Studio Art 3" class="aseam-image">
                                 </div>
                                 <div class="aseam-item hover-effect">
-                                    <div class="aseam-placeholder">
-                                        <span>ASEA-M Studio #2</span>
-                                        <small>Coming Soon</small>
-                                    </div>
+                                    <img src="Aseam/1.png" alt="ASEA-M Studio Art 1" class="aseam-image">
                                 </div>
                                 <div class="aseam-item hover-effect">
-                                    <div class="aseam-placeholder">
-                                        <span>ASEA-M Studio #3</span>
-                                        <small>Coming Soon</small>
-                                    </div>
+                                    <img src="Aseam/2.png" alt="ASEA-M Studio Art 2" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/4.png" alt="ASEA-M Studio Art 4" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/5.png" alt="ASEA-M Studio Art 5" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/6.png" alt="ASEA-M Studio Art 6" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/7.png" alt="ASEA-M Studio Art 7" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/8.png" alt="ASEA-M Studio Art 8" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/9.png" alt="ASEA-M Studio Art 9" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/10.png" alt="ASEA-M Studio Art 10" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/11.png" alt="ASEA-M Studio Art 11" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/12.png" alt="ASEA-M Studio Art 12" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/13.png" alt="ASEA-M Studio Art 13" class="aseam-image">
+                                </div>
+                                <div class="aseam-item hover-effect">
+                                    <img src="Aseam/14.png" alt="ASEA-M Studio Art 14" class="aseam-image">
                                 </div>
                             </div>
                         </div>
@@ -238,38 +248,9 @@
     <!-- PizzaStop Project -->
     <section id="pizza-stop" class="project-pizza fade-in">
         <div class="container">
-            <h2 class="section-title">PizzaStop</h2>
+            <h2 class="section-title" data-en="PizzaStop" data-bg="ПицаСтоп">PizzaStop</h2>
             <div class="pizza-content-wrapper">
-                <div class="pizza-left-section">
-                    <div class="pizza-text-content">
-                        <div class="pizza-story-container">
-                            <div class="pizza-scroll-text-wrapper">
-                                <button class="pizza-story-arrow pizza-story-arrow-up" disabled>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="18,15 12,9 6,15"></polyline>
-                                    </svg>
-                                </button>
-                                <div class="pizza-text-container">
-                                    <div class="pizza-description">
-                                        <p>Скъпи приятели, официално открих летният сезон! С много тен, пот и най-вече - новата визия на най-хубавата и просперираща пицария в Ловеч - PIZZA STOP. Новата й визия от задната страна, изцяло по моя идея (скицата и процеса са сред снимките). Предстои изрисуването й отпред и встрани, като това ще бъде факт другата събота. До тогава - новите обекти започват!</p>
-                                        <p>Процедурата- подготовка на стената, скицирам идеята си и ако бъде одобрена - става факт.</p>
-                                        <p>Едно огромно благодаря на собственика и виновник за най-вкусните пици, дюнери и бургери за съдействието - Илияс Делсизов (с персонала си подготвиха стената) и доверието, което ми гласува!!</p>
-                                        <p>Една мечта от 2-ри клас се сбъдна. Детето в мен кипи. И ще го карам да кипи все повече! ❤️</p>
-                                        <p class="pizza-signature"><strong>NAIDENOVART - Различното 🍕🥙🍔</strong></p>
-                                    </div>
-                                    <div class="pizza-fade-top"></div>
-                                    <div class="pizza-fade-bottom"></div>
-                                </div>
-                            </div>
-                            <button class="pizza-story-arrow pizza-story-arrow-down">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"></polyline>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pizza-carousel-content">
+                <div class="pizza-carousel-content-full">
                     <div class="pizza-scroll-wrapper">
                         <button class="scroll-arrow scroll-arrow-left pizza-arrow-left">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -327,11 +308,11 @@
     <!-- Portfolio Gallery -->
     <section id="portfolio" class="portfolio fade-in">
         <div class="container">
-            <h2 class="section-title">Portfolio</h2>
+            <h2 class="section-title" data-en="Portfolio" data-bg="Портфолио">Portfolio</h2>
             
             <!-- Cars Section -->
             <div class="portfolio-category">
-                <h3 class="category-title">Cars</h3>
+                <h3 class="category-title" data-en="Cars" data-bg="Коли">Cars</h3>
                 <div class="category-scroll-wrapper">
                     <button class="scroll-arrow scroll-arrow-left" data-category="cars">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -343,29 +324,46 @@
                         <div class="portfolio-fade-right"></div>
                         <div class="portfolio-grid">
                             <div class="portfolio-item hover-effect" data-category="cars">
-                                <div class="portfolio-placeholder">
-                                    <span>Classic Car Portrait</span>
-                                </div>
+                                <img src="Vehicle/Cars/1.png" alt="Car Art 1" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="cars">
-                                <div class="portfolio-placeholder">
-                                    <span>Speed Machine Art</span>
-                                </div>
+                                <img src="Vehicle/Cars/2.png" alt="Car Art 2" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="cars">
-                                <div class="portfolio-placeholder">
-                                    <span>Urban Wheels</span>
-                                </div>
+                                <img src="Vehicle/Cars/3.png" alt="Car Art 3" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="cars">
-                                <div class="portfolio-placeholder">
-                                    <span>Vintage Racing Car</span>
-                                </div>
+                                <img src="Vehicle/Cars/4.png" alt="Car Art 4" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="cars">
-                                <div class="portfolio-placeholder">
-                                    <span>Modern Sports Car</span>
-                                </div>
+                                <img src="Vehicle/Cars/5.png" alt="Car Art 5" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/6.png" alt="Car Art 6" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/7.png" alt="Car Art 7" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/8.png" alt="Car Art 8" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/9.png" alt="Car Art 9" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/10.png" alt="Car Art 10" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/11.png" alt="Car Art 11" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/12.png" alt="Car Art 12" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/13.png" alt="Car Art 13" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="cars">
+                                <img src="Vehicle/Cars/14.png" alt="Car Art 14" class="portfolio-img">
                             </div>
                         </div>
                     </div>
@@ -379,7 +377,7 @@
 
             <!-- Motors Section -->
             <div class="portfolio-category">
-                <h3 class="category-title">Motors</h3>
+                <h3 class="category-title" data-en="Motors" data-bg="Мотори">Motors</h3>
                 <div class="category-scroll-wrapper">
                     <button class="scroll-arrow scroll-arrow-left" data-category="motors">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -391,29 +389,19 @@
                         <div class="portfolio-fade-right"></div>
                         <div class="portfolio-grid">
                             <div class="portfolio-item hover-effect" data-category="motors">
-                                <div class="portfolio-placeholder">
-                                    <span>Motorcycle Study #1</span>
-                                </div>
+                                <img src="Vehicle/Motors/1.png" alt="Motorcycle Art 1" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="motors">
-                                <div class="portfolio-placeholder">
-                                    <span>Harley Davidson Portrait</span>
-                                </div>
+                                <img src="Vehicle/Motors/2.png" alt="Motorcycle Art 2" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="motors">
-                                <div class="portfolio-placeholder">
-                                    <span>Sport Bike Collection</span>
-                                </div>
+                                <img src="Vehicle/Motors/3.png" alt="Motorcycle Art 3" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="motors">
-                                <div class="portfolio-placeholder">
-                                    <span>Custom Chopper Art</span>
-                                </div>
+                                <img src="Vehicle/Motors/4.png" alt="Motorcycle Art 4" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="motors">
-                                <div class="portfolio-placeholder">
-                                    <span>Road King Study</span>
-                                </div>
+                                <img src="Vehicle/Motors/5.png" alt="Motorcycle Art 5" class="portfolio-img">
                             </div>
                         </div>
                     </div>
@@ -427,7 +415,7 @@
 
             <!-- Helmets Section -->
             <div class="portfolio-category">
-                <h3 class="category-title">Helmets</h3>
+                <h3 class="category-title" data-en="Helmets" data-bg="Каски">Helmets</h3>
                 <div class="category-scroll-wrapper">
                     <button class="scroll-arrow scroll-arrow-left" data-category="helmets">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -439,29 +427,31 @@
                         <div class="portfolio-fade-right"></div>
                         <div class="portfolio-grid">
                             <div class="portfolio-item hover-effect" data-category="helmets">
-                                <div class="portfolio-placeholder">
-                                    <span>Racing Helmet Collection</span>
-                                </div>
+                                <img src="Vehicle/Helmets/1.png" alt="Helmet Art 1" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="helmets">
-                                <div class="portfolio-placeholder">
-                                    <span>Vintage Racing Helmet</span>
-                                </div>
+                                <img src="Vehicle/Helmets/2.png" alt="Helmet Art 2" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="helmets">
-                                <div class="portfolio-placeholder">
-                                    <span>Custom Painted Helmet</span>
-                                </div>
+                                <img src="Vehicle/Helmets/3.png" alt="Helmet Art 3" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="helmets">
-                                <div class="portfolio-placeholder">
-                                    <span>Modern Sport Helmet</span>
-                                </div>
+                                <img src="Vehicle/Helmets/4.png" alt="Helmet Art 4" class="portfolio-img">
                             </div>
                             <div class="portfolio-item hover-effect" data-category="helmets">
-                                <div class="portfolio-placeholder">
-                                    <span>Classic Safety Gear</span>
-                                </div>
+                                <img src="Vehicle/Helmets/5.png" alt="Helmet Art 5" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="helmets">
+                                <img src="Vehicle/Helmets/6.png" alt="Helmet Art 6" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="helmets">
+                                <img src="Vehicle/Helmets/7.png" alt="Helmet Art 7" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="helmets">
+                                <img src="Vehicle/Helmets/8.png" alt="Helmet Art 8" class="portfolio-img">
+                            </div>
+                            <div class="portfolio-item hover-effect" data-category="helmets">
+                                <img src="Vehicle/Helmets/9.png" alt="Helmet Art 9" class="portfolio-img">
                             </div>
                         </div>
                     </div>
@@ -486,39 +476,39 @@
             <!-- Poster Gallery Grid -->
             <div class="poster-gallery">
                 <div class="poster-item hover-effect" data-poster="poster-1">
-                    <img src="Poetry/1_1_11zon.png" alt="Poster 1" class="poster-img">
+                    <img src="Poetry/1.png" alt="Street Poster 1" class="poster-img">
                 </div>
                 
                 <div class="poster-item hover-effect" data-poster="poster-2">
-                    <img src="Poetry/2_9_11zon.png" alt="Истинският Муж Закрила" class="poster-img">
+                    <img src="Poetry/2.png" alt="Street Poster 2" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="christmas-miracle">
-                    <img src="Poetry/christmas miracle_2_11zon.png" alt="Christmas Miracle" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-3">
+                    <img src="Poetry/3.png" alt="Street Poster 3" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="discipline-mother">
-                    <img src="Poetry/discipline mother of the success_8_11zon.png" alt="Discipline Mother of Success" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-4">
+                    <img src="Poetry/4.png" alt="Street Poster 4" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="drive-safely">
-                    <img src="Poetry/drive safely_7_11zon.png" alt="Drive Safely" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-5">
+                    <img src="Poetry/5.png" alt="Street Poster 5" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="family">
-                    <img src="Poetry/family_3_11zon.png" alt="Family" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-6">
+                    <img src="Poetry/6.png" alt="Street Poster 6" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="her-eyes-blinks">
-                    <img src="Poetry/her eyes blinks_5_11zon.png" alt="Her Eyes Blinks" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-7">
+                    <img src="Poetry/7.png" alt="Street Poster 7" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="motivation-girl">
-                    <img src="Poetry/motivation girl_6_11zon.png" alt="Motivation Girl" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-8">
+                    <img src="Poetry/8.png" alt="Street Poster 8" class="poster-img">
                 </div>
                 
-                <div class="poster-item hover-effect" data-poster="she-ok-no">
-                    <img src="Poetry/she ok no_4_11zon.png" alt="She OK No" class="poster-img">
+                <div class="poster-item hover-effect" data-poster="poster-9">
+                    <img src="Poetry/9.png" alt="Street Poster 9" class="poster-img">
                 </div>
             </div>
             
