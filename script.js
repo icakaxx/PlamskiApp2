@@ -1,5 +1,7 @@
 // Removed custom cursor functionality for better browser compatibility
 
+console.log('🎨 NaidenovART Script loaded successfully!');
+
 // Mobile Navigation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -81,6 +83,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
 // Portfolio Scroll Arrows and Fade Effects
 // Create separate functions for each portfolio category (like Pizza approach)
 function initializeCarsPortfolio() {
+    console.log('Initializing Cars Portfolio...');
     const scrollContainer = document.querySelector('.portfolio-scroll-container[data-category="cars"]');
     const portfolioGrid = scrollContainer?.querySelector('.portfolio-grid');
     const leftArrow = document.querySelector('.scroll-arrow-left[data-category="cars"]');
@@ -88,10 +91,23 @@ function initializeCarsPortfolio() {
     const fadeLeft = scrollContainer?.querySelector('.portfolio-fade-left');
     const fadeRight = scrollContainer?.querySelector('.portfolio-fade-right');
     
-    if (!portfolioGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
-        console.log('Cars portfolio elements not found');
+    console.log('Cars elements found:', {
+        scrollContainer: !!scrollContainer,
+        portfolioGrid: !!portfolioGrid,
+        leftArrow: !!leftArrow,
+        rightArrow: !!rightArrow,
+        fadeLeft: !!fadeLeft,
+        fadeRight: !!fadeRight
+    });
+    
+    if (!portfolioGrid || !leftArrow || !rightArrow) {
+        console.log('Cars portfolio essential elements not found');
         return;
     }
+    
+    // Make sure the grid is scrollable
+    portfolioGrid.style.overflowX = 'auto';
+    portfolioGrid.style.scrollBehavior = 'smooth';
     
     const scrollAmount = 320;
     
@@ -307,6 +323,7 @@ function initializeAwardsScroll() {
 
 // Project Alfa Scroll Functionality
 function initializeProjectAlfa() {
+    console.log('Initializing Project Alfa...');
     const scrollContainer = document.querySelector('.alfa-carousel-content-full .alfa-scroll-container');
     const alfaGrid = document.querySelector('.alfa-carousel-content-full .alfa-grid');
     const leftArrow = document.querySelector('.alfa-arrow-left');
@@ -314,8 +331,17 @@ function initializeProjectAlfa() {
     const fadeLeft = document.querySelector('.alfa-carousel-content-full .alfa-fade-left');
     const fadeRight = document.querySelector('.alfa-carousel-content-full .alfa-fade-right');
     
+    console.log('Alfa elements found:', {
+        scrollContainer: !!scrollContainer,
+        alfaGrid: !!alfaGrid,
+        leftArrow: !!leftArrow,
+        rightArrow: !!rightArrow,
+        fadeLeft: !!fadeLeft,
+        fadeRight: !!fadeRight
+    });
+    
     if (!alfaGrid || !leftArrow || !rightArrow || !fadeLeft || !fadeRight) {
-        console.log('Project Alfa elements not found');
+        console.log('Project Alfa elements not found - some elements missing');
         return;
     }
     
@@ -661,9 +687,11 @@ function initializePizzaTextScroll() {
 
 // Initialize all sections after DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, starting initialization...');
     setTimeout(() => {
         // Initialize portfolio items as visible
         const portfolioItems = document.querySelectorAll('.portfolio-item');
+        console.log('Found portfolio items:', portfolioItems.length);
         portfolioItems.forEach(item => {
             item.classList.add('visible');
         });
@@ -673,17 +701,21 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeLightbox();
         
         // Initialize portfolio categories (separate functions like Pizza approach)
+        console.log('Initializing portfolio categories...');
         initializeCarsPortfolio();
         initializeMotorsPortfolio();
         initializeHelmetsPortfolio();
         
         // Initialize project sections
+        console.log('Initializing project sections...');
         initializeProjectAlfa();
         initializeAseamProject();
         initializeStoryScroll();
         initializePizzaProject();
         initializePizzaTextScroll();
         initializeAwardsScroll();
+        
+        console.log('All initialization complete!');
     }, 500);
 });
 
@@ -1042,6 +1074,61 @@ document.addEventListener('keydown', (e) => {
 });
 
 console.log('🎨 NaidenovART Portfolio loaded! Try the Konami Code for a surprise...');
+
+// Simple arrow test - add direct event listeners for debugging
+setTimeout(() => {
+    console.log('Testing arrow functionality...');
+    
+    // Test Cars Portfolio arrows
+    const carsLeftArrow = document.querySelector('.scroll-arrow-left[data-category="cars"]');
+    const carsRightArrow = document.querySelector('.scroll-arrow-right[data-category="cars"]');
+    const carsGrid = document.querySelector('.portfolio-scroll-container[data-category="cars"] .portfolio-grid');
+    
+    console.log('Cars arrows found:', {
+        leftArrow: !!carsLeftArrow,
+        rightArrow: !!carsRightArrow,
+        grid: !!carsGrid
+    });
+    
+    if (carsLeftArrow && carsGrid) {
+        carsLeftArrow.addEventListener('click', () => {
+            console.log('DIRECT: Cars left arrow clicked!');
+            carsGrid.scrollLeft -= 300;
+        });
+    }
+    
+    if (carsRightArrow && carsGrid) {
+        carsRightArrow.addEventListener('click', () => {
+            console.log('DIRECT: Cars right arrow clicked!');
+            carsGrid.scrollLeft += 300;
+        });
+    }
+    
+    // Test Alfa arrows
+    const alfaLeftArrow = document.querySelector('.alfa-arrow-left');
+    const alfaRightArrow = document.querySelector('.alfa-arrow-right');
+    const alfaGrid = document.querySelector('.alfa-carousel-content-full .alfa-grid');
+    
+    console.log('Alfa arrows found:', {
+        leftArrow: !!alfaLeftArrow,
+        rightArrow: !!alfaRightArrow,
+        grid: !!alfaGrid
+    });
+    
+    if (alfaLeftArrow && alfaGrid) {
+        alfaLeftArrow.addEventListener('click', () => {
+            console.log('DIRECT: Alfa left arrow clicked!');
+            alfaGrid.scrollLeft -= 300;
+        });
+    }
+    
+    if (alfaRightArrow && alfaGrid) {
+        alfaRightArrow.addEventListener('click', () => {
+            console.log('DIRECT: Alfa right arrow clicked!');
+            alfaGrid.scrollLeft += 300;
+        });
+    }
+}, 1000);
 
 // Language switching functionality
 let currentLanguage = 'en';
