@@ -229,86 +229,70 @@ body {
         gap: 1.5rem;
     }
     
-    /* About section mobile layout - 3 vertical containers */
-    .about {
-        padding: 2rem 0;
-    }
-    
-    .about .section-title {
-        /* Header/title container */
-        width: 100%;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        padding: 0 1rem;
-        order: 1;
-    }
-    
-    .about-content {
+    /* Clean three-block mobile layout for About section */
+    .about-section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        /* Remove any grid or side-by-side layout */
-        grid-template-columns: none;
-        gap: 0;
+        padding: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        /* Remove any old layout styles */
+        float: none;
+        position: relative;
     }
     
-    /* Profile picture container */
+    /* Header container */
+    .about-header h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .about-header .highlight {
+        color: #667eea;
+        font-weight: 700;
+    }
+    
+    /* Image container */
     .about-image {
-        order: 2;
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
         margin-bottom: 1.5rem;
-        padding: 0 1rem;
     }
     
-    .artist-photo {
-        width: 100%;
+    .about-image img {
+        width: 80%;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 1rem auto;
         display: block;
+        border-radius: 1rem;
         height: auto;
         aspect-ratio: 3/4;
         object-fit: cover;
-        border-radius: 1rem;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        /* Remove any float or absolute positioning */
+        /* Remove any interfering styles */
         float: none;
         position: relative;
     }
     
-    .artist-placeholder {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-        display: block;
-        border-radius: 1rem;
-        /* Remove any float or absolute positioning */
-        float: none;
-        position: relative;
-    }
-    
-    /* Biography/description text container */
+    /* Text container */
     .about-text {
-        order: 3;
         width: 100%;
         padding: 1rem;
-        margin-bottom: 1.5rem;
-        /* Remove any float or absolute positioning */
+        text-align: center;
+        line-height: 1.6;
+        /* Remove any interfering styles */
         float: none;
         position: relative;
-        /* Remove any fixed widths or margins */
         max-width: none;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
     }
     
     .about-text p {
-        text-align: left;
+        text-align: center;
         line-height: 1.6;
         margin-bottom: 1rem;
     }
@@ -319,9 +303,15 @@ body {
     }
     
     .story-text {
-        text-align: left;
+        text-align: center;
         line-height: 1.6;
         padding: 1rem 0;
+    }
+    
+    /* Override any desktop grid/flex layouts */
+    .about-content {
+        display: block !important;
+        grid-template-columns: none !important;
     }
     
     /* Statistics/highlights container */
