@@ -1,0 +1,11 @@
+{
+  "appId": "com.naidenovart.portfolio",
+  "appName": "NaidenovART Portfolio",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
