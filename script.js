@@ -1043,6 +1043,49 @@ document.addEventListener('keydown', (e) => {
 
 console.log('🎨 NaidenovART Portfolio loaded! Try the Konami Code for a surprise...');
 
+// Language switching functionality
+let currentLanguage = 'en';
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update all elements with language data attributes
+    const elements = document.querySelectorAll('[data-en][data-bg]');
+    elements.forEach(element => {
+        if (element.getAttribute(`data-${lang}`)) {
+            element.textContent = element.getAttribute(`data-${lang}`);
+        }
+    });
+    
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Store language preference
+    localStorage.setItem('naidenovart-language', lang);
+}
+
+// Initialize language switching
+document.addEventListener('DOMContentLoaded', () => {
+    // Get saved language preference or default to English
+    const savedLanguage = localStorage.getItem('naidenovart-language') || 'en';
+    
+    // Add click listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
+    });
+    
+    // Set initial language
+    switchLanguage(savedLanguage);
+});
+
 // ASEAM Project Scroll Functionality
 function initializeAseamProject() {
     const scrollContainer = document.querySelector('.aseam-carousel-content-full .aseam-scroll-container');
