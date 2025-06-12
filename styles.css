@@ -211,18 +211,18 @@ body {
     }
     
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
+        text-align: center;
+        width: 100%;
     }
     
     .about-highlights {
         justify-content: center;
         margin: 2rem auto;
-        order: 2;
+        order: 3;
         display: flex;
         width: 100%;
         max-width: 350px;
@@ -232,14 +232,17 @@ body {
     }
 
     .about-image {
-        order: 3;
+        order: 1;
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
     }
 
     .about-text {
-        order: 1;
+        order: 2;
         width: 100%;
     }
     
@@ -877,7 +880,8 @@ section {
 }
 
 .artist-placeholder {
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 400px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 20px;
@@ -891,7 +895,8 @@ section {
 }
 
 .artist-photo {
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 400px;
     object-fit: cover;
     object-position: center;

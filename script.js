@@ -97,18 +97,18 @@ function initializeCarsPortfolio() {
     
     leftArrow.addEventListener('click', () => {
         console.log('Cars Left arrow clicked');
-        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
         console.log('Cars Right arrow clicked');
-        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     function updateScrollEffects() {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+        const { scrollLeft, scrollWidth, clientWidth } = portfolioGrid;
         const maxScroll = scrollWidth - clientWidth;
         
         leftArrow.disabled = scrollLeft <= 5;
@@ -125,7 +125,7 @@ function initializeCarsPortfolio() {
         }
     }
     
-    scrollContainer.addEventListener('scroll', updateScrollEffects);
+    portfolioGrid.addEventListener('scroll', updateScrollEffects);
     setTimeout(updateScrollEffects, 100);
     window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
 }
@@ -147,18 +147,18 @@ function initializeMotorsPortfolio() {
     
     leftArrow.addEventListener('click', () => {
         console.log('Motors Left arrow clicked');
-        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
         console.log('Motors Right arrow clicked');
-        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     function updateScrollEffects() {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+        const { scrollLeft, scrollWidth, clientWidth } = portfolioGrid;
         const maxScroll = scrollWidth - clientWidth;
         
         leftArrow.disabled = scrollLeft <= 5;
@@ -175,7 +175,7 @@ function initializeMotorsPortfolio() {
         }
     }
     
-    scrollContainer.addEventListener('scroll', updateScrollEffects);
+    portfolioGrid.addEventListener('scroll', updateScrollEffects);
     setTimeout(updateScrollEffects, 100);
     window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
 }
@@ -197,18 +197,18 @@ function initializeHelmetsPortfolio() {
     
     leftArrow.addEventListener('click', () => {
         console.log('Helmets Left arrow clicked');
-        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     rightArrow.addEventListener('click', () => {
         console.log('Helmets Right arrow clicked');
-        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        portfolioGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         setTimeout(updateScrollEffects, 100);
     });
     
     function updateScrollEffects() {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+        const { scrollLeft, scrollWidth, clientWidth } = portfolioGrid;
         const maxScroll = scrollWidth - clientWidth;
         
         leftArrow.disabled = scrollLeft <= 5;
@@ -225,7 +225,7 @@ function initializeHelmetsPortfolio() {
         }
     }
     
-    scrollContainer.addEventListener('scroll', updateScrollEffects);
+    portfolioGrid.addEventListener('scroll', updateScrollEffects);
     setTimeout(updateScrollEffects, 100);
     window.addEventListener('resize', () => setTimeout(updateScrollEffects, 100));
 }
